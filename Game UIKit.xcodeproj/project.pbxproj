@@ -1,0 +1,830 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		85D90CA622442B840053C63D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CA522442B840053C63D /* AppDelegate.swift */; };
+		85D90CA822442B840053C63D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CA722442B840053C63D /* GameViewController.swift */; };
+		85D90CAB22442B840053C63D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CA922442B840053C63D /* Main.storyboard */; };
+		85D90CAE22442B840053C63D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CAC22442B840053C63D /* LaunchScreen.storyboard */; };
+		85D90CB722442B840053C63D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CB622442B840053C63D /* AppDelegate.swift */; };
+		85D90CB922442B840053C63D /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CB822442B840053C63D /* GameViewController.swift */; };
+		85D90CBC22442B840053C63D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CBA22442B840053C63D /* Main.storyboard */; };
+		85D90CC422442B840053C63D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D90C9D22442B840053C63D /* Assets.xcassets */; };
+		85D90CC522442B840053C63D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D90C9D22442B840053C63D /* Assets.xcassets */; };
+		85D90CD422442C490053C63D /* SKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CD322442C490053C63D /* SKExtensions.swift */; };
+		85D90CD522442C490053C63D /* SKExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CD322442C490053C63D /* SKExtensions.swift */; };
+		85D90CD722442C970053C63D /* CGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CD622442C970053C63D /* CGExtensions.swift */; };
+		85D90CD822442C970053C63D /* CGExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CD622442C970053C63D /* CGExtensions.swift */; };
+		85D90CDA22442CCE0053C63D /* UIExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CD922442CCE0053C63D /* UIExtensions.swift */; };
+		85D90CDC22442CF50053C63D /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CDB22442CF40053C63D /* GameConstants.swift */; };
+		85D90CDD22442CF50053C63D /* GameConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CDB22442CF40053C63D /* GameConstants.swift */; };
+		85D90CDF22442D340053C63D /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CDE22442D340053C63D /* GameButton.swift */; };
+		85D90CE022442D340053C63D /* GameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CDE22442D340053C63D /* GameButton.swift */; };
+		85D90CE222442D5B0053C63D /* GameTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CE122442D5B0053C63D /* GameTable.swift */; };
+		85D90CE322442D5B0053C63D /* GameTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CE122442D5B0053C63D /* GameTable.swift */; };
+		85D90CE522442D6D0053C63D /* GameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CE422442D6D0053C63D /* GameTableCell.swift */; };
+		85D90CE622442D6D0053C63D /* GameTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CE422442D6D0053C63D /* GameTableCell.swift */; };
+		85D90CE822442D8D0053C63D /* GameSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CE722442D8D0053C63D /* GameSlider.swift */; };
+		85D90CE922442D8D0053C63D /* GameSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CE722442D8D0053C63D /* GameSlider.swift */; };
+		85D90CEB22442DA70053C63D /* SidePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CEA22442DA70053C63D /* SidePicker.swift */; };
+		85D90CEC22442DA70053C63D /* SidePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CEA22442DA70053C63D /* SidePicker.swift */; };
+		85D90CEF224438F90053C63D /* FoundationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CEE224438F90053C63D /* FoundationExt.swift */; };
+		85D90CF0224438F90053C63D /* FoundationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90CEE224438F90053C63D /* FoundationExt.swift */; };
+		85D90CFD22443A9A0053C63D /* RectanglesMoving.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF222443A9A0053C63D /* RectanglesMoving.fsh */; };
+		85D90CFE22443A9A0053C63D /* RectanglesMoving.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF222443A9A0053C63D /* RectanglesMoving.fsh */; };
+		85D90CFF22443A9A0053C63D /* CautionStripes.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF322443A9A0053C63D /* CautionStripes.fsh */; };
+		85D90D0022443A9A0053C63D /* CautionStripes.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF322443A9A0053C63D /* CautionStripes.fsh */; };
+		85D90D0122443A9A0053C63D /* HexagonShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF422443A9A0053C63D /* HexagonShader.fsh */; };
+		85D90D0222443A9A0053C63D /* HexagonShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF422443A9A0053C63D /* HexagonShader.fsh */; };
+		85D90D0322443A9A0053C63D /* RadarShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF522443A9A0053C63D /* RadarShader.fsh */; };
+		85D90D0422443A9A0053C63D /* RadarShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF522443A9A0053C63D /* RadarShader.fsh */; };
+		85D90D0522443A9A0053C63D /* InterlaceShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF622443A9A0053C63D /* InterlaceShader.fsh */; };
+		85D90D0622443A9A0053C63D /* InterlaceShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF622443A9A0053C63D /* InterlaceShader.fsh */; };
+		85D90D0722443A9A0053C63D /* CautionColored.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF722443A9A0053C63D /* CautionColored.fsh */; };
+		85D90D0822443A9A0053C63D /* CautionColored.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF722443A9A0053C63D /* CautionColored.fsh */; };
+		85D90D0922443A9A0053C63D /* MapShapeGradient.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF822443A9A0053C63D /* MapShapeGradient.fsh */; };
+		85D90D0A22443A9A0053C63D /* MapShapeGradient.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF822443A9A0053C63D /* MapShapeGradient.fsh */; };
+		85D90D0B22443A9A0053C63D /* HealthShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF922443A9A0053C63D /* HealthShader.fsh */; };
+		85D90D0C22443A9A0053C63D /* HealthShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CF922443A9A0053C63D /* HealthShader.fsh */; };
+		85D90D0D22443A9A0053C63D /* CirclesMovingShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CFA22443A9A0053C63D /* CirclesMovingShader.fsh */; };
+		85D90D0E22443A9A0053C63D /* CirclesMovingShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CFA22443A9A0053C63D /* CirclesMovingShader.fsh */; };
+		85D90D0F22443A9A0053C63D /* TransitionShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CFB22443A9A0053C63D /* TransitionShader.fsh */; };
+		85D90D1022443A9A0053C63D /* TransitionShader.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CFB22443A9A0053C63D /* TransitionShader.fsh */; };
+		85D90D1122443A9A0053C63D /* CutionStripesColored.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CFC22443A9A0053C63D /* CutionStripesColored.fsh */; };
+		85D90D1222443A9A0053C63D /* CutionStripesColored.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 85D90CFC22443A9A0053C63D /* CutionStripesColored.fsh */; };
+		85D90D1422443CE70053C63D /* profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D1322443CE70053C63D /* profile.jpg */; };
+		85D90D1522443CE70053C63D /* profile.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D1322443CE70053C63D /* profile.jpg */; };
+		85D90D1722443D9B0053C63D /* ContentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90D1622443D9B0053C63D /* ContentScene.swift */; };
+		85D90D1822443D9B0053C63D /* ContentScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90D1622443D9B0053C63D /* ContentScene.swift */; };
+		85D90D1A224443B10053C63D /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90D19224443B10053C63D /* IntroScene.swift */; };
+		85D90D1B224443B10053C63D /* IntroScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90D19224443B10053C63D /* IntroScene.swift */; };
+		85D90D1D22444DD70053C63D /* InterfaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D1C22444DD70053C63D /* InterfaceAssets.xcassets */; };
+		85D90D1E22444DD70053C63D /* InterfaceAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D1C22444DD70053C63D /* InterfaceAssets.xcassets */; };
+		85D90D202244511F0053C63D /* PreviewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90D1F2244511F0053C63D /* PreviewScene.swift */; };
+		85D90D212244511F0053C63D /* PreviewScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D90D1F2244511F0053C63D /* PreviewScene.swift */; };
+		85D90D5322445B7E0053C63D /* Cantarell-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2422445B7E0053C63D /* Cantarell-Oblique.ttf */; };
+		85D90D5422445B7E0053C63D /* Cantarell-Oblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2422445B7E0053C63D /* Cantarell-Oblique.ttf */; };
+		85D90D5522445B7E0053C63D /* Cantarell-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2522445B7E0053C63D /* Cantarell-Bold.ttf */; };
+		85D90D5622445B7E0053C63D /* Cantarell-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2522445B7E0053C63D /* Cantarell-Bold.ttf */; };
+		85D90D5922445B7E0053C63D /* Cantarell-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2722445B7E0053C63D /* Cantarell-Regular.ttf */; };
+		85D90D5A22445B7E0053C63D /* Cantarell-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2722445B7E0053C63D /* Cantarell-Regular.ttf */; };
+		85D90D5B22445B7E0053C63D /* Cantarell-BoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2822445B7E0053C63D /* Cantarell-BoldOblique.ttf */; };
+		85D90D5C22445B7E0053C63D /* Cantarell-BoldOblique.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2822445B7E0053C63D /* Cantarell-BoldOblique.ttf */; };
+		85D90D5D22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2A22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf */; };
+		85D90D5E22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2A22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf */; };
+		85D90D5F22445B7E0053C63D /* Squarish Sans CT Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2B22445B7E0053C63D /* Squarish Sans CT Regular.ttf */; };
+		85D90D6022445B7E0053C63D /* Squarish Sans CT Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2B22445B7E0053C63D /* Squarish Sans CT Regular.ttf */; };
+		85D90D6322445B7E0053C63D /* OCRA.otf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2E22445B7E0053C63D /* OCRA.otf */; };
+		85D90D6422445B7E0053C63D /* OCRA.otf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D2E22445B7E0053C63D /* OCRA.otf */; };
+		85D90D8922445B7E0053C63D /* Dosis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4522445B7E0053C63D /* Dosis-Medium.ttf */; };
+		85D90D8A22445B7E0053C63D /* Dosis-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4522445B7E0053C63D /* Dosis-Medium.ttf */; };
+		85D90D8B22445B7E0053C63D /* Dosis-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4622445B7E0053C63D /* Dosis-Light.ttf */; };
+		85D90D8C22445B7E0053C63D /* Dosis-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4622445B7E0053C63D /* Dosis-Light.ttf */; };
+		85D90D8D22445B7E0053C63D /* Dosis-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4722445B7E0053C63D /* Dosis-Bold.ttf */; };
+		85D90D8E22445B7E0053C63D /* Dosis-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4722445B7E0053C63D /* Dosis-Bold.ttf */; };
+		85D90D8F22445B7E0053C63D /* Dosis-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4822445B7E0053C63D /* Dosis-Book.ttf */; };
+		85D90D9022445B7E0053C63D /* Dosis-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4822445B7E0053C63D /* Dosis-Book.ttf */; };
+		85D90D9122445B7E0053C63D /* Dosis-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4922445B7E0053C63D /* Dosis-ExtraBold.ttf */; };
+		85D90D9222445B7E0053C63D /* Dosis-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4922445B7E0053C63D /* Dosis-ExtraBold.ttf */; };
+		85D90D9322445B7E0053C63D /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4A22445B7E0053C63D /* Dosis-SemiBold.ttf */; };
+		85D90D9422445B7E0053C63D /* Dosis-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4A22445B7E0053C63D /* Dosis-SemiBold.ttf */; };
+		85D90D9522445B7E0053C63D /* Dosis-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4B22445B7E0053C63D /* Dosis-ExtraLight.ttf */; };
+		85D90D9622445B7E0053C63D /* Dosis-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4B22445B7E0053C63D /* Dosis-ExtraLight.ttf */; };
+		85D90D9722445B7E0053C63D /* Inconsolata-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4C22445B7E0053C63D /* Inconsolata-Bold.ttf */; };
+		85D90D9822445B7E0053C63D /* Inconsolata-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4C22445B7E0053C63D /* Inconsolata-Bold.ttf */; };
+		85D90DA122445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */; };
+		85D90DA222445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		85D90C9D22442B840053C63D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		85D90CA222442B840053C63D /* Game UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D90CA522442B840053C63D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85D90CA722442B840053C63D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		85D90CAA22442B840053C63D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85D90CAD22442B840053C63D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		85D90CAF22442B840053C63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D90CB422442B840053C63D /* Game UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85D90CB622442B840053C63D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		85D90CB822442B840053C63D /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		85D90CBB22442B840053C63D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		85D90CBD22442B840053C63D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		85D90CD322442C490053C63D /* SKExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKExtensions.swift; sourceTree = "<group>"; };
+		85D90CD622442C970053C63D /* CGExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGExtensions.swift; sourceTree = "<group>"; };
+		85D90CD922442CCE0053C63D /* UIExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtensions.swift; sourceTree = "<group>"; };
+		85D90CDB22442CF40053C63D /* GameConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameConstants.swift; sourceTree = "<group>"; };
+		85D90CDE22442D340053C63D /* GameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameButton.swift; sourceTree = "<group>"; };
+		85D90CE122442D5B0053C63D /* GameTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTable.swift; sourceTree = "<group>"; };
+		85D90CE422442D6D0053C63D /* GameTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableCell.swift; sourceTree = "<group>"; };
+		85D90CE722442D8D0053C63D /* GameSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSlider.swift; sourceTree = "<group>"; };
+		85D90CEA22442DA70053C63D /* SidePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidePicker.swift; sourceTree = "<group>"; };
+		85D90CEE224438F90053C63D /* FoundationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationExt.swift; sourceTree = "<group>"; };
+		85D90CF222443A9A0053C63D /* RectanglesMoving.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RectanglesMoving.fsh; sourceTree = "<group>"; };
+		85D90CF322443A9A0053C63D /* CautionStripes.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CautionStripes.fsh; sourceTree = "<group>"; };
+		85D90CF422443A9A0053C63D /* HexagonShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = HexagonShader.fsh; sourceTree = "<group>"; };
+		85D90CF522443A9A0053C63D /* RadarShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = RadarShader.fsh; sourceTree = "<group>"; };
+		85D90CF622443A9A0053C63D /* InterlaceShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = InterlaceShader.fsh; sourceTree = "<group>"; };
+		85D90CF722443A9A0053C63D /* CautionColored.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CautionColored.fsh; sourceTree = "<group>"; };
+		85D90CF822443A9A0053C63D /* MapShapeGradient.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = MapShapeGradient.fsh; sourceTree = "<group>"; };
+		85D90CF922443A9A0053C63D /* HealthShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = HealthShader.fsh; sourceTree = "<group>"; };
+		85D90CFA22443A9A0053C63D /* CirclesMovingShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CirclesMovingShader.fsh; sourceTree = "<group>"; };
+		85D90CFB22443A9A0053C63D /* TransitionShader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = TransitionShader.fsh; sourceTree = "<group>"; };
+		85D90CFC22443A9A0053C63D /* CutionStripesColored.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = CutionStripesColored.fsh; sourceTree = "<group>"; };
+		85D90D1322443CE70053C63D /* profile.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = profile.jpg; sourceTree = "<group>"; };
+		85D90D1622443D9B0053C63D /* ContentScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScene.swift; sourceTree = "<group>"; };
+		85D90D19224443B10053C63D /* IntroScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroScene.swift; sourceTree = "<group>"; };
+		85D90D1C22444DD70053C63D /* InterfaceAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = InterfaceAssets.xcassets; sourceTree = "<group>"; };
+		85D90D1F2244511F0053C63D /* PreviewScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScene.swift; sourceTree = "<group>"; };
+		85D90D2422445B7E0053C63D /* Cantarell-Oblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cantarell-Oblique.ttf"; sourceTree = "<group>"; };
+		85D90D2522445B7E0053C63D /* Cantarell-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cantarell-Bold.ttf"; sourceTree = "<group>"; };
+		85D90D2622445B7E0053C63D /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		85D90D2722445B7E0053C63D /* Cantarell-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cantarell-Regular.ttf"; sourceTree = "<group>"; };
+		85D90D2822445B7E0053C63D /* Cantarell-BoldOblique.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cantarell-BoldOblique.ttf"; sourceTree = "<group>"; };
+		85D90D2A22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Squarish Sans CT Regular SC.ttf"; sourceTree = "<group>"; };
+		85D90D2B22445B7E0053C63D /* Squarish Sans CT Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Squarish Sans CT Regular.ttf"; sourceTree = "<group>"; };
+		85D90D2C22445B7E0053C63D /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		85D90D2E22445B7E0053C63D /* OCRA.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = OCRA.otf; sourceTree = "<group>"; };
+		85D90D4322445B7E0053C63D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		85D90D4522445B7E0053C63D /* Dosis-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Medium.ttf"; sourceTree = "<group>"; };
+		85D90D4622445B7E0053C63D /* Dosis-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.ttf"; sourceTree = "<group>"; };
+		85D90D4722445B7E0053C63D /* Dosis-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.ttf"; sourceTree = "<group>"; };
+		85D90D4822445B7E0053C63D /* Dosis-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Book.ttf"; sourceTree = "<group>"; };
+		85D90D4922445B7E0053C63D /* Dosis-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.ttf"; sourceTree = "<group>"; };
+		85D90D4A22445B7E0053C63D /* Dosis-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.ttf"; sourceTree = "<group>"; };
+		85D90D4B22445B7E0053C63D /* Dosis-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraLight.ttf"; sourceTree = "<group>"; };
+		85D90D4C22445B7E0053C63D /* Inconsolata-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-Bold.ttf"; sourceTree = "<group>"; };
+		85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-Regular.ttf"; sourceTree = "<group>"; };
+		85D90DA32244640C0053C63D /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		85D90C9F22442B840053C63D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D90CB122442B840053C63D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		85D90C9422442B810053C63D = {
+			isa = PBXGroup;
+			children = (
+				85D90DA32244640C0053C63D /* Readme.md */,
+				85D90C9922442B810053C63D /* Game UIKit Shared */,
+				85D90CA422442B840053C63D /* Game UIKit iOS */,
+				85D90CB522442B840053C63D /* Game UIKit macOS */,
+				85D90CA322442B840053C63D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		85D90C9922442B810053C63D /* Game UIKit Shared */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CD222442C100053C63D /* Game Scenes */,
+				85D90CD122442BE90053C63D /* Scenes UI */,
+				85D90CD022442BDB0053C63D /* Game UI */,
+				85D90CCF22442BCA0053C63D /* Constants */,
+				85D90CCE22442BB70053C63D /* Extensions */,
+				85D90CED22442DCF0053C63D /* Artwork */,
+				85D90C9D22442B840053C63D /* Assets.xcassets */,
+			);
+			path = "Game UIKit Shared";
+			sourceTree = "<group>";
+		};
+		85D90CA322442B840053C63D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CA222442B840053C63D /* Game UIKit.app */,
+				85D90CB422442B840053C63D /* Game UIKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		85D90CA422442B840053C63D /* Game UIKit iOS */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CA522442B840053C63D /* AppDelegate.swift */,
+				85D90CA722442B840053C63D /* GameViewController.swift */,
+				85D90CA922442B840053C63D /* Main.storyboard */,
+				85D90CAC22442B840053C63D /* LaunchScreen.storyboard */,
+				85D90CAF22442B840053C63D /* Info.plist */,
+			);
+			path = "Game UIKit iOS";
+			sourceTree = "<group>";
+		};
+		85D90CB522442B840053C63D /* Game UIKit macOS */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CB622442B840053C63D /* AppDelegate.swift */,
+				85D90CB822442B840053C63D /* GameViewController.swift */,
+				85D90CBA22442B840053C63D /* Main.storyboard */,
+				85D90CBD22442B840053C63D /* Info.plist */,
+			);
+			path = "Game UIKit macOS";
+			sourceTree = "<group>";
+		};
+		85D90CCE22442BB70053C63D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CD322442C490053C63D /* SKExtensions.swift */,
+				85D90CD622442C970053C63D /* CGExtensions.swift */,
+				85D90CD922442CCE0053C63D /* UIExtensions.swift */,
+				85D90CEE224438F90053C63D /* FoundationExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		85D90CCF22442BCA0053C63D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CDB22442CF40053C63D /* GameConstants.swift */,
+				85D90CF122443A9A0053C63D /* Shaders */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		85D90CD022442BDB0053C63D /* Game UI */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CDE22442D340053C63D /* GameButton.swift */,
+				85D90CE122442D5B0053C63D /* GameTable.swift */,
+				85D90CE422442D6D0053C63D /* GameTableCell.swift */,
+				85D90CE722442D8D0053C63D /* GameSlider.swift */,
+				85D90CEA22442DA70053C63D /* SidePicker.swift */,
+			);
+			path = "Game UI";
+			sourceTree = "<group>";
+		};
+		85D90CD122442BE90053C63D /* Scenes UI */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D1622443D9B0053C63D /* ContentScene.swift */,
+			);
+			path = "Scenes UI";
+			sourceTree = "<group>";
+		};
+		85D90CD222442C100053C63D /* Game Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D19224443B10053C63D /* IntroScene.swift */,
+				85D90D1F2244511F0053C63D /* PreviewScene.swift */,
+			);
+			path = "Game Scenes";
+			sourceTree = "<group>";
+		};
+		85D90CED22442DCF0053C63D /* Artwork */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D2222445B7E0053C63D /* OFLFonts */,
+				85D90D1C22444DD70053C63D /* InterfaceAssets.xcassets */,
+				85D90D1322443CE70053C63D /* profile.jpg */,
+			);
+			path = Artwork;
+			sourceTree = "<group>";
+		};
+		85D90CF122443A9A0053C63D /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				85D90CF222443A9A0053C63D /* RectanglesMoving.fsh */,
+				85D90CF322443A9A0053C63D /* CautionStripes.fsh */,
+				85D90CF422443A9A0053C63D /* HexagonShader.fsh */,
+				85D90CF522443A9A0053C63D /* RadarShader.fsh */,
+				85D90CF622443A9A0053C63D /* InterlaceShader.fsh */,
+				85D90CF722443A9A0053C63D /* CautionColored.fsh */,
+				85D90CF822443A9A0053C63D /* MapShapeGradient.fsh */,
+				85D90CF922443A9A0053C63D /* HealthShader.fsh */,
+				85D90CFA22443A9A0053C63D /* CirclesMovingShader.fsh */,
+				85D90CFB22443A9A0053C63D /* TransitionShader.fsh */,
+				85D90CFC22443A9A0053C63D /* CutionStripesColored.fsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
+		85D90D2222445B7E0053C63D /* OFLFonts */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D4322445B7E0053C63D /* README.md */,
+				85D90D4C22445B7E0053C63D /* Inconsolata-Bold.ttf */,
+				85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */,
+				85D90D2322445B7E0053C63D /* Cantarell */,
+				85D90D2922445B7E0053C63D /* squarishSans */,
+				85D90D2D22445B7E0053C63D /* OCR */,
+				85D90D4422445B7E0053C63D /* Dosis */,
+			);
+			path = OFLFonts;
+			sourceTree = "<group>";
+		};
+		85D90D2322445B7E0053C63D /* Cantarell */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D2422445B7E0053C63D /* Cantarell-Oblique.ttf */,
+				85D90D2522445B7E0053C63D /* Cantarell-Bold.ttf */,
+				85D90D2622445B7E0053C63D /* OFL.txt */,
+				85D90D2722445B7E0053C63D /* Cantarell-Regular.ttf */,
+				85D90D2822445B7E0053C63D /* Cantarell-BoldOblique.ttf */,
+			);
+			path = Cantarell;
+			sourceTree = "<group>";
+		};
+		85D90D2922445B7E0053C63D /* squarishSans */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D2A22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf */,
+				85D90D2B22445B7E0053C63D /* Squarish Sans CT Regular.ttf */,
+				85D90D2C22445B7E0053C63D /* OFL.txt */,
+			);
+			path = squarishSans;
+			sourceTree = "<group>";
+		};
+		85D90D2D22445B7E0053C63D /* OCR */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D2E22445B7E0053C63D /* OCRA.otf */,
+			);
+			path = OCR;
+			sourceTree = "<group>";
+		};
+		85D90D4422445B7E0053C63D /* Dosis */ = {
+			isa = PBXGroup;
+			children = (
+				85D90D4522445B7E0053C63D /* Dosis-Medium.ttf */,
+				85D90D4622445B7E0053C63D /* Dosis-Light.ttf */,
+				85D90D4722445B7E0053C63D /* Dosis-Bold.ttf */,
+				85D90D4822445B7E0053C63D /* Dosis-Book.ttf */,
+				85D90D4922445B7E0053C63D /* Dosis-ExtraBold.ttf */,
+				85D90D4A22445B7E0053C63D /* Dosis-SemiBold.ttf */,
+				85D90D4B22445B7E0053C63D /* Dosis-ExtraLight.ttf */,
+			);
+			path = Dosis;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		85D90CA122442B840053C63D /* Game UIKit iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85D90CC822442B840053C63D /* Build configuration list for PBXNativeTarget "Game UIKit iOS" */;
+			buildPhases = (
+				85D90C9E22442B840053C63D /* Sources */,
+				85D90C9F22442B840053C63D /* Frameworks */,
+				85D90CA022442B840053C63D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Game UIKit iOS";
+			productName = "Game UIKit iOS";
+			productReference = 85D90CA222442B840053C63D /* Game UIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+		85D90CB322442B840053C63D /* Game UIKit macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 85D90CCB22442B840053C63D /* Build configuration list for PBXNativeTarget "Game UIKit macOS" */;
+			buildPhases = (
+				85D90CB022442B840053C63D /* Sources */,
+				85D90CB122442B840053C63D /* Frameworks */,
+				85D90CB222442B840053C63D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Game UIKit macOS";
+			productName = "Game UIKit macOS";
+			productReference = 85D90CB422442B840053C63D /* Game UIKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		85D90C9522442B810053C63D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Farini;
+				TargetAttributes = {
+					85D90CA122442B840053C63D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					85D90CB322442B840053C63D = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = 85D90C9822442B810053C63D /* Build configuration list for PBXProject "Game UIKit" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 85D90C9422442B810053C63D;
+			productRefGroup = 85D90CA322442B840053C63D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				85D90CA122442B840053C63D /* Game UIKit iOS */,
+				85D90CB322442B840053C63D /* Game UIKit macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		85D90CA022442B840053C63D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D90CFF22443A9A0053C63D /* CautionStripes.fsh in Resources */,
+				85D90D5D22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf in Resources */,
+				85D90D8922445B7E0053C63D /* Dosis-Medium.ttf in Resources */,
+				85D90D9322445B7E0053C63D /* Dosis-SemiBold.ttf in Resources */,
+				85D90D5322445B7E0053C63D /* Cantarell-Oblique.ttf in Resources */,
+				85D90D5922445B7E0053C63D /* Cantarell-Regular.ttf in Resources */,
+				85D90D8D22445B7E0053C63D /* Dosis-Bold.ttf in Resources */,
+				85D90D1122443A9A0053C63D /* CutionStripesColored.fsh in Resources */,
+				85D90DA122445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */,
+				85D90D5F22445B7E0053C63D /* Squarish Sans CT Regular.ttf in Resources */,
+				85D90D9722445B7E0053C63D /* Inconsolata-Bold.ttf in Resources */,
+				85D90CAB22442B840053C63D /* Main.storyboard in Resources */,
+				85D90D0522443A9A0053C63D /* InterlaceShader.fsh in Resources */,
+				85D90D0B22443A9A0053C63D /* HealthShader.fsh in Resources */,
+				85D90D9122445B7E0053C63D /* Dosis-ExtraBold.ttf in Resources */,
+				85D90CAE22442B840053C63D /* LaunchScreen.storyboard in Resources */,
+				85D90CFD22443A9A0053C63D /* RectanglesMoving.fsh in Resources */,
+				85D90D9522445B7E0053C63D /* Dosis-ExtraLight.ttf in Resources */,
+				85D90CC422442B840053C63D /* Assets.xcassets in Resources */,
+				85D90D1D22444DD70053C63D /* InterfaceAssets.xcassets in Resources */,
+				85D90D8B22445B7E0053C63D /* Dosis-Light.ttf in Resources */,
+				85D90D0D22443A9A0053C63D /* CirclesMovingShader.fsh in Resources */,
+				85D90D6322445B7E0053C63D /* OCRA.otf in Resources */,
+				85D90D0F22443A9A0053C63D /* TransitionShader.fsh in Resources */,
+				85D90D1422443CE70053C63D /* profile.jpg in Resources */,
+				85D90D0122443A9A0053C63D /* HexagonShader.fsh in Resources */,
+				85D90D5B22445B7E0053C63D /* Cantarell-BoldOblique.ttf in Resources */,
+				85D90D5522445B7E0053C63D /* Cantarell-Bold.ttf in Resources */,
+				85D90D0722443A9A0053C63D /* CautionColored.fsh in Resources */,
+				85D90D0322443A9A0053C63D /* RadarShader.fsh in Resources */,
+				85D90D0922443A9A0053C63D /* MapShapeGradient.fsh in Resources */,
+				85D90D8F22445B7E0053C63D /* Dosis-Book.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D90CB222442B840053C63D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D90D0622443A9A0053C63D /* InterlaceShader.fsh in Resources */,
+				85D90D9622445B7E0053C63D /* Dosis-ExtraLight.ttf in Resources */,
+				85D90D0422443A9A0053C63D /* RadarShader.fsh in Resources */,
+				85D90D1022443A9A0053C63D /* TransitionShader.fsh in Resources */,
+				85D90D8C22445B7E0053C63D /* Dosis-Light.ttf in Resources */,
+				85D90D0E22443A9A0053C63D /* CirclesMovingShader.fsh in Resources */,
+				85D90DA222445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */,
+				85D90D9822445B7E0053C63D /* Inconsolata-Bold.ttf in Resources */,
+				85D90D8E22445B7E0053C63D /* Dosis-Bold.ttf in Resources */,
+				85D90D0822443A9A0053C63D /* CautionColored.fsh in Resources */,
+				85D90D5422445B7E0053C63D /* Cantarell-Oblique.ttf in Resources */,
+				85D90D5C22445B7E0053C63D /* Cantarell-BoldOblique.ttf in Resources */,
+				85D90D0C22443A9A0053C63D /* HealthShader.fsh in Resources */,
+				85D90D5A22445B7E0053C63D /* Cantarell-Regular.ttf in Resources */,
+				85D90CBC22442B840053C63D /* Main.storyboard in Resources */,
+				85D90D1222443A9A0053C63D /* CutionStripesColored.fsh in Resources */,
+				85D90D0222443A9A0053C63D /* HexagonShader.fsh in Resources */,
+				85D90D0022443A9A0053C63D /* CautionStripes.fsh in Resources */,
+				85D90D8A22445B7E0053C63D /* Dosis-Medium.ttf in Resources */,
+				85D90D0A22443A9A0053C63D /* MapShapeGradient.fsh in Resources */,
+				85D90D6022445B7E0053C63D /* Squarish Sans CT Regular.ttf in Resources */,
+				85D90D5622445B7E0053C63D /* Cantarell-Bold.ttf in Resources */,
+				85D90D5E22445B7E0053C63D /* Squarish Sans CT Regular SC.ttf in Resources */,
+				85D90CC522442B840053C63D /* Assets.xcassets in Resources */,
+				85D90D9022445B7E0053C63D /* Dosis-Book.ttf in Resources */,
+				85D90D6422445B7E0053C63D /* OCRA.otf in Resources */,
+				85D90D1522443CE70053C63D /* profile.jpg in Resources */,
+				85D90CFE22443A9A0053C63D /* RectanglesMoving.fsh in Resources */,
+				85D90D9422445B7E0053C63D /* Dosis-SemiBold.ttf in Resources */,
+				85D90D1E22444DD70053C63D /* InterfaceAssets.xcassets in Resources */,
+				85D90D9222445B7E0053C63D /* Dosis-ExtraBold.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		85D90C9E22442B840053C63D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D90CE822442D8D0053C63D /* GameSlider.swift in Sources */,
+				85D90CDF22442D340053C63D /* GameButton.swift in Sources */,
+				85D90CE222442D5B0053C63D /* GameTable.swift in Sources */,
+				85D90D202244511F0053C63D /* PreviewScene.swift in Sources */,
+				85D90CA822442B840053C63D /* GameViewController.swift in Sources */,
+				85D90CE522442D6D0053C63D /* GameTableCell.swift in Sources */,
+				85D90CA622442B840053C63D /* AppDelegate.swift in Sources */,
+				85D90CEF224438F90053C63D /* FoundationExt.swift in Sources */,
+				85D90D1722443D9B0053C63D /* ContentScene.swift in Sources */,
+				85D90CDA22442CCE0053C63D /* UIExtensions.swift in Sources */,
+				85D90D1A224443B10053C63D /* IntroScene.swift in Sources */,
+				85D90CDC22442CF50053C63D /* GameConstants.swift in Sources */,
+				85D90CD422442C490053C63D /* SKExtensions.swift in Sources */,
+				85D90CEB22442DA70053C63D /* SidePicker.swift in Sources */,
+				85D90CD722442C970053C63D /* CGExtensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		85D90CB022442B840053C63D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				85D90CE022442D340053C63D /* GameButton.swift in Sources */,
+				85D90CF0224438F90053C63D /* FoundationExt.swift in Sources */,
+				85D90CB922442B840053C63D /* GameViewController.swift in Sources */,
+				85D90CB722442B840053C63D /* AppDelegate.swift in Sources */,
+				85D90CE322442D5B0053C63D /* GameTable.swift in Sources */,
+				85D90CEC22442DA70053C63D /* SidePicker.swift in Sources */,
+				85D90CE622442D6D0053C63D /* GameTableCell.swift in Sources */,
+				85D90CD522442C490053C63D /* SKExtensions.swift in Sources */,
+				85D90D1B224443B10053C63D /* IntroScene.swift in Sources */,
+				85D90D1822443D9B0053C63D /* ContentScene.swift in Sources */,
+				85D90CD822442C970053C63D /* CGExtensions.swift in Sources */,
+				85D90CE922442D8D0053C63D /* GameSlider.swift in Sources */,
+				85D90CDD22442CF50053C63D /* GameConstants.swift in Sources */,
+				85D90D212244511F0053C63D /* PreviewScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		85D90CA922442B840053C63D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85D90CAA22442B840053C63D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		85D90CAC22442B840053C63D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85D90CAD22442B840053C63D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		85D90CBA22442B840053C63D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				85D90CBB22442B840053C63D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		85D90CC622442B840053C63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		85D90CC722442B840053C63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		85D90CC922442B840053C63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXF7BJD3VH;
+				INFOPLIST_FILE = "Game UIKit iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Farini.Game-UIKit";
+				PRODUCT_NAME = "Game UIKit";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		85D90CCA22442B840053C63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FXF7BJD3VH;
+				INFOPLIST_FILE = "Game UIKit iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Farini.Game-UIKit";
+				PRODUCT_NAME = "Game UIKit";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		85D90CCC22442B840053C63D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FXF7BJD3VH;
+				INFOPLIST_FILE = "Game UIKit macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "Farini.Game-UIKit";
+				PRODUCT_NAME = "Game UIKit";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		85D90CCD22442B840053C63D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = FXF7BJD3VH;
+				INFOPLIST_FILE = "Game UIKit macOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = "Farini.Game-UIKit";
+				PRODUCT_NAME = "Game UIKit";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		85D90C9822442B810053C63D /* Build configuration list for PBXProject "Game UIKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D90CC622442B840053C63D /* Debug */,
+				85D90CC722442B840053C63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85D90CC822442B840053C63D /* Build configuration list for PBXNativeTarget "Game UIKit iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D90CC922442B840053C63D /* Debug */,
+				85D90CCA22442B840053C63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		85D90CCB22442B840053C63D /* Build configuration list for PBXNativeTarget "Game UIKit macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				85D90CCC22442B840053C63D /* Debug */,
+				85D90CCD22442B840053C63D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 85D90C9522442B810053C63D /* Project object */;
+}
