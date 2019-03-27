@@ -21,6 +21,8 @@ class GameSlider: SKNode {
     var backgroundStrokeWidth:CGFloat = 1.0
     
     var knob:SKShapeNode = SKShapeNode(circleOfRadius: 32.0)
+    var knobTextureStatic = GameTextures.knobStatic
+    var knobTextureMoving = GameTextures.knobMoving
     var knobSprite:SKSpriteNode?
     
     var knobColor:SKColor = GameColors.silver
@@ -60,16 +62,20 @@ class GameSlider: SKNode {
         self.addChild(backShape)
         
         // Knob
-        var knobShape = SKShapeNode(circleOfRadius: 16.0)
-        // An image (SpriteNode) can be set as a knob
-        if let knobImage = knobSprite{
-            knobShape = SKShapeNode(circleOfRadius: 4.0)
-            knobImage.zPosition = 5
-            knobShape.addChild(knobImage)
-        }
-        knobShape.fillColor = knobColor
-        knobShape.strokeColor = GameColors.orange
-        knobShape.lineWidth = 1.0
+        let knobShape = SKShapeNode(circleOfRadius: 4.0)
+        let knobSize = CGSize(square: 32.0)
+        let sprite = SKSpriteNode(texture: knobTextureStatic, size: knobSize)
+        knobShape.addChild(sprite)
+//        var knobShape = SKShapeNode(circleOfRadius: 16.0)
+//        // An image (SpriteNode) can be set as a knob
+//        if let knobImage = knobSprite{
+//            knobShape = SKShapeNode(circleOfRadius: 4.0)
+//            knobImage.zPosition = 5
+//            knobShape.addChild(knobImage)
+//        }
+        // knobShape.fillColor = knobColor
+        // knobShape.strokeColor = GameColors.orange
+        // knobShape.lineWidth = 1.0
         
         let xPos = self.knobCurrentPosition()
         knobShape.position = CGPoint(x: xPos, y: 0.0)
@@ -186,6 +192,79 @@ class GameSlider: SKNode {
             
             touchedKnob = false
         }
+        
+        delegate?.sliderDidChange(sender: self)
+    }
+    #endif
+    
+    #if os(OSX)
+    override func mouseDown(with event: NSEvent) {
+        let location = event.location(in: self)
+        if knob.contains(location){
+            touchedKnob = true
+        }
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        let location = event.location(in: self)
+        
+        var posX:CGFloat = 0.0
+        var posAdjusted:Bool = false
+        
+        if location.x > width / 2{
+            posX = width / 2
+            posAdjusted = true
+            //touchedKnob = false
+        }
+        if location.x < -(width / 2){
+            posX = -width / 2
+            posAdjusted = true
+            //touchedKnob = false
+        }
+        
+        if !posAdjusted{
+            posX = location.x
+        }
+        
+        knob.position.x = posX
+        
+        let valueTranslator = self.currentValueForKnob()
+        self.current = valueTranslator
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        if touchedKnob == false { return }
+        
+        let location = event.location(in: self)
+            
+        var posX:CGFloat = 0.0
+        var posAdjusted:Bool = false
+            
+        if location.x > width / 2{
+            posX = width / 2
+            posAdjusted = true
+            //touchedKnob = false
+        }
+        if location.x < -(width / 2){
+            posX = -width / 2
+            posAdjusted = true
+            //touchedKnob = false
+        }
+            
+        if !posAdjusted{
+            posX = location.x
+        }
+            
+        knob.position.x = posX
+            
+        let valueTranslator = self.currentValueForKnob()
+        self.current = valueTranslator
+            
+        print("Finished Setting Knob")
+        print("Value: \(current)")
+        print("Position: \(knob.position.x)")
+            
+        touchedKnob = false
         
         delegate?.sliderDidChange(sender: self)
     }

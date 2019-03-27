@@ -17,38 +17,22 @@ public struct GameColors{
 public struct GameTextures{
     
     static let closeIcon =      SKTexture(imageNamed: "CloseIcon")
-    
     static let homeIcon =       SKTexture(imageNamed: "HomeIcon")
-    
-    static let timeBoost =      SKTexture(imageNamed: "TimeBoostIcon")
     static let infoIcon =       SKTexture(imageNamed: "InfoIcon")
-    static let shopIcon =       SKTexture(imageNamed: "ShopIcon3")
     static let warningIcon =    SKTexture(imageNamed: "Warning")
-    static let refreshIcon =    SKTexture(imageNamed: "RefreshIcon")
-    static let tradeIcon =      SKTexture(imageNamed: "TradeIcon")
-    static let diceaseIcon =    SKTexture(imageNamed: "Dicease")
-    static let factoryIcon =    SKTexture(imageNamed: "FactoryIcon")
-    static let quarantineIcon = SKTexture(imageNamed: "Quarantine")
-    
     static let addIcon =    SKTexture(imageNamed: "AddIcon")
     static let removeIcon = SKTexture(imageNamed: "DeleteIcon")
     static let starEmpty =  SKTexture(imageNamed: "StarEmptyIcon")
     static let starFull =   SKTexture(imageNamed: "StarFullIcon")
     
-    static let vehicleIcon = SKTexture(imageNamed: "VehicleIcon")
-    
+    static let diceaseIcon =    SKTexture(imageNamed: "Dicease")
     static let cryptokey =  SKTexture(imageNamed: "Cryptokey")
-    static let crystal =    SKTexture(imageNamed: "Crystal")
-    static let energy =     SKTexture(imageNamed: "Energy")
-    static let food =       SKTexture(imageNamed: "Food")
     static let fuel =       SKTexture(imageNamed: "Fuel")
-    static let materials =  SKTexture(imageNamed: "Materials")
     static let sknLogo =    SKTexture(imageNamed: "SkyNation Logo")
-    static let staff =      SKTexture(imageNamed: "Staff")
     static let techTree =   SKTexture(imageNamed: "TechTree")
-    static let token =      SKTexture(imageNamed: "Token")
-    static let robot =      SKTexture(imageNamed: "Head")
-    static let circuit =    SKTexture(imageNamed: "CircuitComponent")
+    
+    static let knobStatic = SKTexture(imageNamed: "KnobStatic")
+    static let knobMoving = SKTexture(imageNamed: "KnobMoving")
     
 }
 

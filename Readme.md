@@ -57,3 +57,6 @@ Under the folder "Artwork", there is a file called "InterfaceAssets.xcassets", w
 Here you can use game shaders without having to worry about what SKUniforms to pass. It still needs som improvements, but you can call those static functions that shows clearly what variables are expected, such as *SKColor*, *Float*, *CGPoint*, *CGSize*, etc. The point is to make coding easy, and this improves the quality of work, while minimizing risks, such as forgetting what *SKUniform* types to pass, and also to visualize what each *SKShader* does.
 
 
+## Changes
+
+- [X] 3/27/2019: GameSlider use in MacOS: 
