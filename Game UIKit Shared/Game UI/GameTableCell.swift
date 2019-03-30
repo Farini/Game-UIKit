@@ -138,7 +138,7 @@ class LabelCell:SKNTableCell{
     
 }
 
-/** Recoding Table Cell (This one should be better */
+/** Recoding Table Cell */
 class TableCell:SKNode{
     
     var representedObject:Any

@@ -60,3 +60,4 @@ Here you can use game shaders without having to worry about what SKUniforms to p
 ## Changes
 
 - [X] 3/27/2019: GameSlider use in MacOS: 
+- [X] 3/29/2019: Improvements in GameSlier, and added a label.

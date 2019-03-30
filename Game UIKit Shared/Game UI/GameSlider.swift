@@ -13,36 +13,41 @@ class GameSlider: SKNode {
     // UI
     var width:CGFloat
     var sliderHeight:CGFloat = 15.0
-    // static let heightDefault = 15.0
     
+    // Background
     var background:SKShapeNode = SKShapeNode()
     var backgroundColor = GameColors.transBlack
     var backgroundStrokeColor = GameColors.silver
     var backgroundStrokeWidth:CGFloat = 1.0
     
+    // Knob
     var knob:SKShapeNode = SKShapeNode(circleOfRadius: 32.0)
-    var knobTextureStatic = GameTextures.knobStatic
-    var knobTextureMoving = GameTextures.knobMoving
+    var knobTextureIdle = GameTextures.knobStatic
+    var knobTexturebusy = GameTextures.knobMoving
     var knobSprite:SKSpriteNode?
+    var knobHasSprite:Bool = true
     
-    var knobColor:SKColor = GameColors.silver
+    var knobColorIdle:SKColor = GameColors.silver
+    var knobColorBusy:SKColor = GameColors.orange
     
-    var centerLabel:SKLabelNode?
-    var rightLabel:SKLabelNode?
-    var leftLabel:SKLabelNode?
+    var labelPrefix:String = ""
+    var label:SKLabelNode?
+//    var rightLabel:SKLabelNode?
+//    var leftLabel:SKLabelNode?
     
-    var currentTint:SKColor?
+    // UI State
+    /** Return whether user began sliding knob */
+    var isKnobSliding:Bool = false
+    
+    // var touchedKnob:Bool = false
+    var delegate:GameSliderDelegate?
     
     // Variables
     var minimum:Double
     var maximum:Double
     var current:Double
     
-    var touchedKnob:Bool = false
-    var delegate:GameSliderDelegate?
-    
     // MARK: - Methods
-    
     /** Renders the Node */
     func render(){
         
@@ -62,28 +67,39 @@ class GameSlider: SKNode {
         self.addChild(backShape)
         
         // Knob
-        let knobShape = SKShapeNode(circleOfRadius: 4.0)
-        let knobSize = CGSize(square: 32.0)
-        let sprite = SKSpriteNode(texture: knobTextureStatic, size: knobSize)
-        knobShape.addChild(sprite)
-//        var knobShape = SKShapeNode(circleOfRadius: 16.0)
-//        // An image (SpriteNode) can be set as a knob
-//        if let knobImage = knobSprite{
-//            knobShape = SKShapeNode(circleOfRadius: 4.0)
-//            knobImage.zPosition = 5
-//            knobShape.addChild(knobImage)
-//        }
-        // knobShape.fillColor = knobColor
-        // knobShape.strokeColor = GameColors.orange
-        // knobShape.lineWidth = 1.0
+        let knobShape = SKShapeNode(circleOfRadius: 16.0)
         
+        if knobHasSprite == true{
+            let knobSize = CGSize(square: 32.0)
+            let sprite = SKSpriteNode(texture: knobTextureIdle, size: knobSize)
+            sprite.name = "Idle"
+            self.knobSprite = sprite
+            knobShape.fillColor = SKColor.clear
+            knobShape.strokeColor = SKColor.clear
+            knobShape.lineWidth = 1.0
+            knobShape.addChild(sprite)
+        }else{
+            // To set the knob shape
+            knobShape.fillColor = knobColorIdle
+            knobShape.strokeColor = knobColorIdle
+            knobShape.lineWidth = 1.0
+        }
+        
+        // Label
+        if let label = self.label{
+            let currentValueString = current.doubleDigitString
+            label.text = "\(labelPrefix) \(currentValueString)"
+            let labelPosY = label.calculateAccumulatedFrame().height + GameMargins.small + (knobShape.calculateAccumulatedFrame().height / 2.0)
+            label.position = CGPoint(x: 0.0, y: labelPosY)
+            self.addChild(label)
+        }
+
         let xPos = self.knobCurrentPosition()
         knobShape.position = CGPoint(x: xPos, y: 0.0)
         knobShape.zPosition = 5
         self.knob = knobShape
         
         self.addChild(knobShape)
-        
     }
     
     // MARK: - Initializers
@@ -91,14 +107,51 @@ class GameSlider: SKNode {
         
         self.width = width
         
+        // Make sure starting value is between min and max
         if let firstValue = starting{
-            self.current = firstValue
+            if firstValue >= min && firstValue <= max{
+                self.current = firstValue
+            }else{
+                self.current = min
+            }
         }else{
-            self.current = 0.0
+            self.current = min
         }
-        
         self.minimum = min
         self.maximum = max
+        
+        super.init()
+        
+        self.isUserInteractionEnabled = true
+        
+        self.render()
+    }
+    
+    init(width:CGFloat, min:Double, max:Double, starting:Double?, text:String){
+        
+        self.width = width
+        
+        // Make sure starting value is between min and max
+        if let firstValue = starting{
+            if firstValue >= min && firstValue <= max{
+                self.current = firstValue
+            }else{
+                self.current = min
+            }
+        }else{
+            self.current = min
+        }
+        self.minimum = min
+        self.maximum = max
+        
+        // Label
+        let centerLabel = GameLabels.headingLabel()
+        centerLabel.horizontalAlignmentMode = .center
+        centerLabel.text = "Test"
+        
+        self.labelPrefix = text
+        
+        self.label = centerLabel
         
         super.init()
         
@@ -112,53 +165,66 @@ class GameSlider: SKNode {
     }
     
     // MARK: - Control
-    
     #if os(iOS) || os(tvOS)
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard isKnobSliding == false else {
+            isKnobSliding = false
+            return
+        }
         for touch in touches {
             let location = touch.location(in: self)
             if knob.contains(location){
-                touchedKnob = true
-                // Touched Knob
+                isKnobSliding = true
             }
         }
+        updateSliderImage()
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if touchedKnob == false { return }
+        guard isKnobSliding == true else{ return }
         
         for touch in touches{
-            let location = touch.location(in: self)
             
+            let location = touch.location(in: self)
             var posX:CGFloat = 0.0
             var posAdjusted:Bool = false
             
+            // Check max and min boundaries
             if location.x > width / 2{
                 posX = width / 2
                 posAdjusted = true
-                //touchedKnob = false
             }
             if location.x < -(width / 2){
                 posX = -width / 2
                 posAdjusted = true
-                //touchedKnob = false
             }
-            
+            // Confirm Location
             if !posAdjusted{
                 posX = location.x
             }
             
             knob.position.x = posX
+            self.current = currentValueForKnob()
             
-            let valueTranslator = self.currentValueForKnob()
-            self.current = valueTranslator
+            // Label
+            if let label = self.label{
+                let currentValueString = current.doubleDigitString
+                label.text = "\(labelPrefix) \(currentValueString)"
+                self.addChild(label)
+            }
+        }
+        
+        // Label
+        if let label = self.label{
+            let currentValueString = current.doubleDigitString
+            label.text = "\(labelPrefix) \(currentValueString)"
         }
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         
-        if touchedKnob == false { return }
+        guard isKnobSliding == true else { return }
         
         for touch in touches{
             let location = touch.location(in: self)
@@ -169,12 +235,10 @@ class GameSlider: SKNode {
             if location.x > width / 2{
                 posX = width / 2
                 posAdjusted = true
-                //touchedKnob = false
             }
             if location.x < -(width / 2){
                 posX = -width / 2
                 posAdjusted = true
-                //touchedKnob = false
             }
             
             if !posAdjusted{
@@ -183,15 +247,14 @@ class GameSlider: SKNode {
             
             knob.position.x = posX
             
-            let valueTranslator = self.currentValueForKnob()
-            self.current = valueTranslator
+            self.current = currentValueForKnob().doubleDigitRounded
             
-            print("Finished Setting Knob")
-            print("Value: \(current)")
-            print("Position: \(knob.position.x)")
+            print("Finished Sliding Value: \(current) - Position: \(knob.position.x) ")
             
-            touchedKnob = false
+            isKnobSliding = false
         }
+        
+        updateSliderImage()
         
         delegate?.sliderDidChange(sender: self)
     }
@@ -199,29 +262,39 @@ class GameSlider: SKNode {
     
     #if os(OSX)
     override func mouseDown(with event: NSEvent) {
+        guard isKnobSliding == false else {
+            isKnobSliding = false
+            return
+        }
+        
         let location = event.location(in: self)
         if knob.contains(location){
-            touchedKnob = true
+            // touchedKnob = true
+            isKnobSliding = true
         }
+        updateSliderImage()
     }
     
     override func mouseDragged(with event: NSEvent) {
-        let location = event.location(in: self)
         
+        guard isKnobSliding == true else{
+            return
+        }
+        
+        let location = event.location(in: self)
         var posX:CGFloat = 0.0
         var posAdjusted:Bool = false
         
+        // Check max and min boundaries
         if location.x > width / 2{
             posX = width / 2
             posAdjusted = true
-            //touchedKnob = false
         }
         if location.x < -(width / 2){
             posX = -width / 2
             posAdjusted = true
-            //touchedKnob = false
         }
-        
+        // Confirm Location
         if !posAdjusted{
             posX = location.x
         }
@@ -230,47 +303,83 @@ class GameSlider: SKNode {
         
         let valueTranslator = self.currentValueForKnob()
         self.current = valueTranslator
+        
+        // Label
+        if let label = self.label{
+            let currentValueString = current.doubleDigitString
+            label.text = "\(labelPrefix) \(currentValueString)"
+        }
     }
     
     override func mouseUp(with event: NSEvent) {
-        if touchedKnob == false { return }
+        
+        guard isKnobSliding == true else {
+            return
+        }
         
         let location = event.location(in: self)
-            
         var posX:CGFloat = 0.0
         var posAdjusted:Bool = false
-            
+        
+        // Check max and min boundaries
         if location.x > width / 2{
             posX = width / 2
             posAdjusted = true
-            //touchedKnob = false
         }
         if location.x < -(width / 2){
             posX = -width / 2
             posAdjusted = true
-            //touchedKnob = false
         }
-            
+        // Confirm Location
         if !posAdjusted{
             posX = location.x
         }
-            
+        
         knob.position.x = posX
+        
+        self.current = currentValueForKnob().doubleDigitRounded
+        
+        print("Finished Sliding Value: \(current) - Position: \(knob.position.x) ")
             
-        let valueTranslator = self.currentValueForKnob()
-        self.current = valueTranslator
-            
-        print("Finished Setting Knob")
-        print("Value: \(current)")
-        print("Position: \(knob.position.x)")
-            
-        touchedKnob = false
+        isKnobSliding = false
+        updateSliderImage()
         
         delegate?.sliderDidChange(sender: self)
     }
     #endif
     
     // Calculations
+    func updateSliderImage(){
+        
+        switch isKnobSliding {
+        case true:
+            if knobHasSprite{
+                if knobSprite?.name == "Idle"{
+                    knobSprite!.texture = knobTexturebusy
+                    knobSprite!.name = "Busy"
+                }
+            }else{
+                knob.fillColor = knobColorIdle
+                knob.strokeColor = knobColorBusy
+            }
+        case false:
+            if knobHasSprite{
+                if knobSprite?.name == "Busy"{
+                    knobSprite!.texture = knobTextureIdle
+                    knobSprite!.name = "Idle"
+                }
+            }else{
+                knob.fillColor = knobColorIdle
+                knob.strokeColor = knobColorBusy
+            }
+        }
+        
+        // Label
+        if let label = self.label{
+            let currentValueString = current.doubleDigitString
+            label.text = "\(labelPrefix) \(currentValueString)"
+        }
+    }
     
     /** returns the knob in the correct position, given the current value */
     func knobCurrentPosition() -> CGFloat{

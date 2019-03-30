@@ -10,41 +10,36 @@ import SpriteKit
 
 class PreviewScene: ContentScene, GameSliderDelegate {
    
-    
-    
     override func didMove(to view: SKView) {
         
+        // A Texture
         let texture = SKTexture(imageNamed: "profile")
         let sprite = SKSpriteNode(texture: texture, size: CGSize(width: 128, height: 128))
         sprite.anchorPoint = AnchorPoints.middle
         
         addMiddleContent(node: sprite)
         
+        // A Multiline Label
         let widthUsed = 0.6 * self.viewWidth
         let fontSize:CGFloat = 14.0
-        
         let textNode = SKNode()
         textNode.createMultilineLabel(message: "The goals of the Open Font License (OFL) are to stimulate worldwide development of collaborative font projects, to support the font creation efforts of academic and linguistic communities, and to provide a free and open framework in which fonts may be shared and improved in partnership with others.", maxWidth: widthUsed, fontSize: fontSize, aligned: .center)
-        
         self.addMiddleContent(node: textNode)
         
-        let button = GameButton(titled: "Awesome Button") {
+        // Button
+        let button = GameButton(titled: "Game Button") {
             print("Put button code in here :)")
         }
-        posY -= button.calculateAccumulatedFrame().height
         addMiddleContent(node: button)
         
-        
-        let slider = GameSlider(width: widthUsed, min: 1.0, max: 100.0, starting: 99.0)
+        // Slider
+        let slider = GameSlider(width: widthUsed, min: 1.0, max: 100.0, starting: 90.0, text: "Slider Value")
         slider.delegate = self
         addMiddleContent(node: slider)
-        
-        
     }
     
     func sliderDidChange(sender: GameSlider) {
-        print("Slider Value: \(sender.current)")
-        print("Slider uses a delegate that calls back a function.")
+        print("Slider Value Changed: \(sender.current)")
     }
     
     override init(view:SKView, title:String){

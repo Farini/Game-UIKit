@@ -55,16 +55,36 @@ class ContentScene: SKScene {
     
     /** Adds the node to the center X, and recalculates position Y */
     func addMiddleContent(node:SKNode){
-        var tempY = posY
+        
+        var deltaHeight:CGFloat = 0.0
+        var heightAdjustment:CGFloat = 0.0
         
         if let sprite = node as? SKSpriteNode{
-            let halfHeight = sprite.calculateAccumulatedFrame().height / 2
-            tempY -= halfHeight
+            if sprite.anchorPoint.y == 0.5 && sprite.children.isEmpty{
+                deltaHeight = sprite.calculateAccumulatedFrame().height / 2.0
+                heightAdjustment = sprite.calculateAccumulatedFrame().height / 2.0
+            }else{
+                deltaHeight = sprite.calculateAccumulatedFrame().height
+            }
+        }else if node is GameButton{
+            deltaHeight = node.calculateAccumulatedFrame().height / 2.0
+            heightAdjustment = node.calculateAccumulatedFrame().height / 2.0
+        }else if node is GameSlider{
+            deltaHeight = node.calculateAccumulatedFrame().height
+            heightAdjustment = node.calculateAccumulatedFrame().height * 0.75
+        }else{
+            // a regular node
+            deltaHeight = node.calculateAccumulatedFrame().height
         }
         
-        node.position = CGPoint(x: 0.0, y: tempY)
+        if heightAdjustment > 0{
+            posY -= heightAdjustment
+        }
+        
+        node.position = CGPoint(x: 0.0, y: posY)
+        
         contentPlaceholder.addChild(node)
-        posY -= node.calculateAccumulatedFrame().height + GameMargins.regular
+        posY -= (deltaHeight + (3 * GameMargins.big))
     }
     
     /** Adds a node with position previously set. */
