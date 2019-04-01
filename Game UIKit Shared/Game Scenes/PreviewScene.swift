@@ -28,7 +28,9 @@ class PreviewScene: ContentScene, GameSliderDelegate {
         
         // Button
         let button = GameButton(titled: "Game Button") {
-            print("Put button code in here :)")
+            // print("Put button code in here :)")
+            let newScene = TablesScene(view: view, title: "Tables")
+            self.view!.presentScene(newScene)
         }
         addMiddleContent(node: button)
         

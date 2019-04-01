@@ -99,6 +99,8 @@
 		85D90D9822445B7E0053C63D /* Inconsolata-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D4C22445B7E0053C63D /* Inconsolata-Bold.ttf */; };
 		85D90DA122445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */; };
 		85D90DA222445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */; };
+		85E67A792252CA450092F2B6 /* TablesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E67A782252CA450092F2B6 /* TablesScene.swift */; };
+		85E67A7A2252CA450092F2B6 /* TablesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E67A782252CA450092F2B6 /* TablesScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -160,6 +162,7 @@
 		85D90D4C22445B7E0053C63D /* Inconsolata-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-Bold.ttf"; sourceTree = "<group>"; };
 		85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-Regular.ttf"; sourceTree = "<group>"; };
 		85D90DA32244640C0053C63D /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		85E67A782252CA450092F2B6 /* TablesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -282,6 +285,7 @@
 			children = (
 				85D90D19224443B10053C63D /* IntroScene.swift */,
 				85D90D1F2244511F0053C63D /* PreviewScene.swift */,
+				85E67A782252CA450092F2B6 /* TablesScene.swift */,
 			);
 			path = "Game Scenes";
 			sourceTree = "<group>";
@@ -536,6 +540,7 @@
 				85D90CE222442D5B0053C63D /* GameTable.swift in Sources */,
 				85D90D202244511F0053C63D /* PreviewScene.swift in Sources */,
 				85D90CA822442B840053C63D /* GameViewController.swift in Sources */,
+				85E67A792252CA450092F2B6 /* TablesScene.swift in Sources */,
 				85D90CE522442D6D0053C63D /* GameTableCell.swift in Sources */,
 				85D90CA622442B840053C63D /* AppDelegate.swift in Sources */,
 				85D90CEF224438F90053C63D /* FoundationExt.swift in Sources */,
@@ -557,6 +562,7 @@
 				85D90CF0224438F90053C63D /* FoundationExt.swift in Sources */,
 				85D90CB922442B840053C63D /* GameViewController.swift in Sources */,
 				85D90CB722442B840053C63D /* AppDelegate.swift in Sources */,
+				85E67A7A2252CA450092F2B6 /* TablesScene.swift in Sources */,
 				85D90CE322442D5B0053C63D /* GameTable.swift in Sources */,
 				85D90CEC22442DA70053C63D /* SidePicker.swift in Sources */,
 				85D90CE622442D6D0053C63D /* GameTableCell.swift in Sources */,

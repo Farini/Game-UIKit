@@ -178,6 +178,65 @@ class GameTable:SKNode{
     
     #endif
     
+    // New Init method
+    // What do we want from Init?
+    // Size ?
+    // Delegate Method?
+    // Datasource Method?
+    // head:SKSpriteNode was mandatory. Will be deprecated
+    
+    init(size:CGSize){
+        
+        // Background Rectangle
+        let rectangle = SKSpriteNode(color: SKColor.black.withAlphaComponent(0.75), size: size)
+        rectangle.anchorPoint = CGPoint(x: 0.5, y: 1.0)
+        rectangle.position = CGPoint.zero
+        self.background = rectangle
+        
+        // Header -> Deprecating
+        let theNewHead = SKSpriteNode()
+        self.head = theNewHead
+        
+        // Contour frame
+        let contour = SKShapeNode(rectOf: size)
+        contour.strokeColor = GameColors.silver
+        contour.fillColor = SKColor.clear
+        contour.lineWidth = 0.5
+        let contourPosition = CGPoint(x: 0.0, y: -(size.height / 2.0))
+        contour.position = contourPosition
+        
+        // Anchor
+        let anchor:SKNode = SKNode()
+        anchor.position = CGPoint.zero
+        self.tableAnchor = anchor
+        
+        // Crop Node
+        let cropper = SKCropNode()
+        let copyOfRectangle = rectangle.copy() as! SKSpriteNode
+        copyOfRectangle.position.y = 0
+        cropper.maskNode = copyOfRectangle
+        cropper.position = CGPoint.zero
+        
+        self.cropNode = cropper
+        
+        super.init()
+        
+        addChild(background)
+        // addChild(head)
+        addChild(cropNode)
+        addChild(contour)
+        
+        // Adjust the position of table anchor
+        cropNode.addChild(tableAnchor)
+        
+        self.isUserInteractionEnabled = true
+    }
+    
+    
+    
+    
+    // We are deprecating old initializers
+    
     // MARK - Initializers
     /** Initializes a table with a HeadSize, total height and Title */
     init(with headSize:CGSize, height:CGFloat, entitled:String?) {

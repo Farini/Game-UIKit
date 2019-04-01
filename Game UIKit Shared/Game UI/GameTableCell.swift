@@ -58,6 +58,8 @@ class LabelCell:SKNTableCell{
         mainLabel.horizontalAlignmentMode = .left
         mainLabel.verticalAlignmentMode = .top
         mainLabel.fontColor = GameColors.silver
+        let leftAlign = -(width / 2.0) + GameMargins.regular
+        mainLabel.position = CGPoint(x:leftAlign, y:0.0)
         
         // Main Initializers
         self.init(repObject:iconsoText)
