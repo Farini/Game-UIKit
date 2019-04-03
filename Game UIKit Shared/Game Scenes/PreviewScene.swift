@@ -12,6 +12,14 @@ class PreviewScene: ContentScene, GameSliderDelegate {
    
     override func didMove(to view: SKView) {
         
+        let contents = self.contentPlaceholder.children
+        let disappear = SKAction.moveBy(x: view.bounds.width, y: 0.0, duration: 0.6)
+        let fade = SKAction.fadeOut(withDuration: 0.6)
+        let group = SKAction.group([disappear, fade])
+        for child in contents{
+            child.run(group, completion: child.removeFromParent)
+        }
+        
         // A Texture
         let texture = SKTexture(imageNamed: "profile")
         let sprite = SKSpriteNode(texture: texture, size: CGSize(width: 128, height: 128))

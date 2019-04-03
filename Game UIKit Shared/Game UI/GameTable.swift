@@ -178,6 +178,80 @@ class GameTable:SKNode{
     
     #endif
     
+    #if os(OSX)
+    override func mouseDown(with event: NSEvent) {
+        
+        // let location = event.location(in: self)
+        if !self.background.contains(event.location(in:self)){
+            return
+        }
+        let anchorLocation = event.location(in: tableAnchor)
+        touchDelta = anchorLocation.y
+        var touchedCell:SKNTableCell?
+        for cell in cells{
+            if cell.contains(anchorLocation){
+                touchedCell = cell
+            }
+        }
+        self.lastSelectedCell = touchedCell
+        self.isTouching = true
+    }
+    
+    override func mouseDragged(with event: NSEvent) {
+        let newHeight = event.location(in: tableAnchor).y
+        let oldHeight = touchDelta
+        
+        touchDelta = newHeight
+        
+        let heightChange = oldHeight - newHeight
+        // Should we insert a minimal height change to deselect cell?
+        
+        let anchorY = tableAnchor.position.y
+        
+        let contentHeight = tableAnchor.calculateAccumulatedFrame().size.height
+        
+        let tblHeight = background.calculateAccumulatedFrame().size.height
+        
+        let heightLimit = contentHeight - tblHeight
+        
+        if tableAnchor.position.y < 0 && heightChange > 0{
+            return
+        }
+        
+        if heightChange < 0 && (anchorY > heightLimit){
+            return
+        }
+        
+        if heightChange != 0{
+            tableAnchor.position.y -= heightChange
+        }
+    }
+    
+    override func mouseUp(with event: NSEvent) {
+        
+        if isTouching{
+            if !self.background.contains(event.location(in:self)){
+                return
+            }
+            let locationInAnchor = event.location(in: self.tableAnchor)
+            for cidx in 0...cells.count - 1{
+                let thisCell = cells[cidx]
+                if thisCell.contains(locationInAnchor){//(touchLocation){
+                    let represented = String.init(describing: thisCell.representedObject)
+                    print("Touch End Cell: \(represented)")
+                    // touchedCell = thisCell
+                    if thisCell == self.lastSelectedCell{
+                        print("Matched Previously selected. call delegate")
+                        // Did select
+                        self.delegate?.didSelect(cell: thisCell, at: cidx, sender: self)
+                    }
+                }
+            }
+            isTouching = false
+        }
+    }
+    #endif
+    
     // New Init method
     // What do we want from Init?
     // Size ?

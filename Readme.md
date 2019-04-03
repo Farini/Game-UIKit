@@ -61,3 +61,4 @@ Here you can use game shaders without having to worry about what SKUniforms to p
 
 - [X] 3/27/2019: GameSlider use in MacOS: 
 - [X] 3/29/2019: Improvements in GameSlier, and added a label.
+- [X] 4/3/2019: TableView Mouse events working on mac
