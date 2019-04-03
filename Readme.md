@@ -8,7 +8,7 @@ Game Button was made in a way that you can create the button quickly and add the
 
 ```Swift
 let button = GameButton(titled: "Game Button") {
-// Button code goes here.
+    // Button code goes here.
 }
 ```
 
@@ -19,11 +19,11 @@ There are various aspects of the button UI that you can change easily as you wou
     var labelColorDisabled:SKColor = GameColors.iron
     
 ```Swift
-    let button = GameButton(titled: "Game Button") {
-        // Button code goes here.
-    }
-    button.labelColor = SKColor.blue // Changes the label color to blue (enabled state)
-    button.update // Updates the changes made above
+let button = GameButton(titled: "Game Button") {
+    // Button code goes here.
+}    
+button.labelColor = SKColor.blue // Changes the label color to blue (enabled state)
+button.update // Updates the changes made above
 ```
 
 ## GameConstants.swift

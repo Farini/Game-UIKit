@@ -8,7 +8,26 @@
 
 import SpriteKit
 
-class TablesScene: ContentScene{
+class TablesScene: ContentScene, GameTableDelegate{
+    
+    
+    func didSelect(cell: SKNTableCell, at row: Int, sender: GameTable) {
+        print("Cell delegate call back")
+        let label = GameLabels.tableHeaderLabel()
+        label.fontSize = 55.0
+        label.text = "CELL \(row)"
+        self.addChild(label)
+        let grow = SKAction.scale(by: 2.0, duration: 0.6)
+        let fade = SKAction.fadeOut(withDuration: 1.2)
+        let move = SKAction.moveBy(x: 0, y: -20, duration: 0.6)
+        let rotate = SKAction.scaleY(to: -1, duration: 0.6)
+        let firstGroup = SKAction.group([grow, move])
+        let secondGroup = SKAction.group([fade, rotate])
+        let sequel = SKAction.sequence([firstGroup, secondGroup])
+        label.run(sequel, completion:{
+            self.view?.presentScene(self.previousScene!)
+        })
+    }
     
     override func didMove(to view: SKView) {
         
@@ -16,6 +35,7 @@ class TablesScene: ContentScene{
         let tableHeight = 0.6 * view.bounds.height
         
         let table = GameTable(size: CGSize(width: table1Width, height: tableHeight))
+        table.delegate = self
         
         var cells:[SKNTableCell] = []
 
@@ -25,6 +45,7 @@ class TablesScene: ContentScene{
         }
         
         table.updateTable(with: cells, clear: true)
+        // table.delegate = self
         
         self.addMiddleContent(node: table)
         
