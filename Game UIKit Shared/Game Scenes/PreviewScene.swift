@@ -10,7 +10,11 @@ import SpriteKit
 
 class PreviewScene: ContentScene, GameSliderDelegate {
    
+    var evaporateButton:GameButton?
+    var flipperButton:GameButton?
+    
     override func didMove(to view: SKView) {
+        
         
         let contents = self.contentPlaceholder.children
         let disappear = SKAction.moveBy(x: view.bounds.width, y: 0.0, duration: 0.6)
@@ -46,7 +50,39 @@ class PreviewScene: ContentScene, GameSliderDelegate {
         let slider = GameSlider(width: widthUsed, min: 1.0, max: 100.0, starting: 90.0, text: "Slider Value")
         slider.delegate = self
         addMiddleContent(node: slider)
+        
+        // Evaporate Button
+        let evapButton = GameButton(titled: "Evaporate") {
+            self.runEvaporator()
+        }
+        self.evaporateButton = evapButton
+        addMiddleContent(node: evapButton)
+        
+        // Flippping buttons
+        let flippityButton = GameButton(titled: "Flippity") {
+            let replacer = GameButton(titled: "Flippity II"){
+                self.runFlippity(replacer: nil)
+            }
+            self.runFlippity(replacer: replacer)
+        }
+        self.flipperButton = flippityButton
+        addMiddleContent(node: flippityButton)
+        
     }
+    
+    func runEvaporator(){
+        if let button = self.evaporateButton{
+            GameAnimations.evaporate(node: button)
+        }
+    }
+    
+    func runFlippity(replacer:GameButton?){
+        if let flipper = self.flipperButton{
+            GameAnimations.flippity(node: flipper, newNode: replacer)
+        }
+    }
+    
+    
     
     func sliderDidChange(sender: GameSlider) {
         print("Slider Value Changed: \(sender.current)")

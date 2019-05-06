@@ -14,6 +14,17 @@ public struct GameColors{
     static let transBlack = SKColor.black.withAlphaComponent(0.75)
 }
 
+public struct SpaceTheme{
+    static let background =     SKColor(named: "SpaceBlack")
+    static let semiOverlay =    SKColor(named: "SemiBlackOverlay")
+    static let borderColor =    SKColor(named: "SpaceBorders")
+    static let disabled =       SKColor(named: "SpaceDisabled")
+    static let mainColor =      SKColor(named: "SpaceAqua")
+    static let secondColor =    SKColor(named: "SpaceGreen")
+    static let warningColor =   SKColor(named: "SpaceWarning")
+    static let dangerColor =    SKColor(named: "SpaceDanger")
+}
+
 public struct GameTextures{
     
     static let closeIcon =      SKTexture(imageNamed: "CloseIcon")
@@ -163,4 +174,70 @@ extension NSNotification.Name{
     // Sounds
     static let playBackgroundSound = "PlayBackgroundSound"
     static let stopBackgroundSound = "StopBackgroundSound"
+}
+
+/** A Collection of basic game animations */
+public struct GameAnimations{
+    
+    /** Moves up with scaling, then fades out with scaling back */
+    static func evaporate(node:SKNode){
+        let nodeHeight = node.calculateAccumulatedFrame().height
+        
+        let firstDuration:TimeInterval = 0.2
+        let firstMoveUpDelta = nodeHeight / 4
+        let firstMoveUp = SKAction.moveBy(x: 0.0, y: firstMoveUpDelta, duration: firstDuration)
+        let growth = SKAction.scale(by: 1.1, duration: firstDuration)
+        let firstGroup = SKAction.group([firstMoveUp, growth])
+        
+        let rest = SKAction.wait(forDuration: 0.15)
+        
+        let secondDuration:TimeInterval = 0.25
+        let secondMoveUpDelta = nodeHeight * 2.0
+        let secondMoveUp = SKAction.moveBy(x: 0.0, y: secondMoveUpDelta, duration: secondDuration)
+        let fadeOut = SKAction.fadeOut(withDuration: secondDuration)
+        let shrink = SKAction.scale(by: 0.3, duration: secondDuration)
+        let secondGroup = SKAction.group([secondMoveUp, fadeOut, shrink])
+        
+        let sequence = SKAction.sequence([firstGroup, rest, secondGroup])
+        node.run(sequence) {
+            node.removeFromParent()
+        }
+    }
+    
+    /** Flips the node, and optionally add another node as if it was behind it (node must have a parent) */
+    static func flippity(node:SKNode, newNode:SKNode?){
+        
+        // The Duration of the animation
+        let flipDuration:TimeInterval = 1.0
+        
+        // The flip animation of the main node
+        let flipper = SKAction.scaleX(by: 0.0, y: -0.5, duration: flipDuration / 2)
+        
+        // Check if there is another node
+        if let otherNode = newNode{
+            guard let oldParent = node.parent else{
+                return
+            }
+            
+            // Setup the new node
+            otherNode.position = node.position
+            otherNode.zPosition = node.zPosition
+            otherNode.yScale = 0.5
+            
+            // Wait until main node is half-flipped
+            let halfWait = SKAction.wait(forDuration: flipDuration / 2)
+            otherNode.run(halfWait) {
+                oldParent.addChild(otherNode)
+            }
+            
+            let halfFlip = SKAction.scaleX(by: 0.0, y: -0.5, duration: flipDuration / 2)
+            otherNode.run(halfFlip)
+        }
+        
+        node.run(flipper) {
+            node.alpha = 0.0
+            node.removeFromParent()
+        }
+        
+    }
 }

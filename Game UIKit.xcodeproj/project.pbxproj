@@ -101,6 +101,8 @@
 		85D90DA222445B7E0053C63D /* Inconsolata-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */; };
 		85E67A792252CA450092F2B6 /* TablesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E67A782252CA450092F2B6 /* TablesScene.swift */; };
 		85E67A7A2252CA450092F2B6 /* TablesScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85E67A782252CA450092F2B6 /* TablesScene.swift */; };
+		85E67AD1225B94420092F2B6 /* SpaceTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E67AD0225B94420092F2B6 /* SpaceTheme.xcassets */; };
+		85E67AD2225B94420092F2B6 /* SpaceTheme.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85E67AD0225B94420092F2B6 /* SpaceTheme.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -163,6 +165,7 @@
 		85D90D5222445B7E0053C63D /* Inconsolata-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inconsolata-Regular.ttf"; sourceTree = "<group>"; };
 		85D90DA32244640C0053C63D /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		85E67A782252CA450092F2B6 /* TablesScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TablesScene.swift; sourceTree = "<group>"; };
+		85E67AD0225B94420092F2B6 /* SpaceTheme.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SpaceTheme.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -296,6 +299,7 @@
 				85D90D2222445B7E0053C63D /* OFLFonts */,
 				85D90D1C22444DD70053C63D /* InterfaceAssets.xcassets */,
 				85D90D1322443CE70053C63D /* profile.jpg */,
+				85E67AD0225B94420092F2B6 /* SpaceTheme.xcassets */,
 			);
 			path = Artwork;
 			sourceTree = "<group>";
@@ -470,6 +474,7 @@
 				85D90D0522443A9A0053C63D /* InterlaceShader.fsh in Resources */,
 				85D90D0B22443A9A0053C63D /* HealthShader.fsh in Resources */,
 				85D90D9122445B7E0053C63D /* Dosis-ExtraBold.ttf in Resources */,
+				85E67AD1225B94420092F2B6 /* SpaceTheme.xcassets in Resources */,
 				85D90CAE22442B840053C63D /* LaunchScreen.storyboard in Resources */,
 				85D90CFD22443A9A0053C63D /* RectanglesMoving.fsh in Resources */,
 				85D90D9522445B7E0053C63D /* Dosis-ExtraLight.ttf in Resources */,
@@ -508,6 +513,7 @@
 				85D90D5C22445B7E0053C63D /* Cantarell-BoldOblique.ttf in Resources */,
 				85D90D0C22443A9A0053C63D /* HealthShader.fsh in Resources */,
 				85D90D5A22445B7E0053C63D /* Cantarell-Regular.ttf in Resources */,
+				85E67AD2225B94420092F2B6 /* SpaceTheme.xcassets in Resources */,
 				85D90CBC22442B840053C63D /* Main.storyboard in Resources */,
 				85D90D1222443A9A0053C63D /* CutionStripesColored.fsh in Resources */,
 				85D90D0222443A9A0053C63D /* HexagonShader.fsh in Resources */,
